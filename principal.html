@@ -16,7 +16,7 @@
 </head>
 
 <body>
-
+    
     <main>
 
         <div class="entrada">
@@ -24,20 +24,20 @@
             <img class="logo" src="imagenes/logo-alura.png" alt="Logo Alura">
 
             <section class="entrada-texto">
-                <textarea placeholder="Ingrese texto aquí"></textarea>
+                <textarea placeholder="Ingrese texto aquí" id="textoUsuario"></textarea>
             </section>
 
             <section class="botones">
-                <button>Encriptar</button>
-                <button>Desencriptar</button>
+                <button onclick="encriptarTexto();">Encriptar</button>
+                <button onclick="desencriptarTexto();">Desencriptar</button>
             </section>
 
         </div>
 
         <div class="resultado">
             <section class="rectangulo">
-                <img src="imagenes/pensando.jpg" alt="Mujer pensando">
-                <p>Lugar donde se va a mostrar el texto después de hacerle el proceso</p>
+                <img src="imagenes/pensando.jpg" alt="Mujer pensando" id="imagen">
+                <p id="espacioResultado">Lugar donde se va a mostrar el texto después de hacerle el proceso</p>
             </section>
         </div>
     </main>
@@ -46,5 +46,6 @@
         <p>Elaborado por Isabel</p>
     </footer>
     
+    <script src="encriptador.js"></script>
 </body>
 </html>
