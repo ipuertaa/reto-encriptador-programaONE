@@ -47,6 +47,8 @@ function encriptarTexto(){
     }
     document.getElementById("imagen").style.display = "none";
     asignarTextoElemento('espacioResultado', resultadoEncriptado);
+    document.getElementById("textoUsuario").value = "";
+    document.getElementById("copiar").style.display = "inline";
 }
 
 
@@ -61,7 +63,12 @@ function asignarTextoElemento(elemento, texto){
 function desencriptarTexto(){
     let mensajeEncriptado = document.getElementById("textoUsuario").value;
     let resultadoDesencriptado = '';
-
+    resultadoDesencriptado = mensajeEncriptado.replaceAll('ai', 'a');
+    resultadoDesencriptado = resultadoDesencriptado.replaceAll('enter', 'e');
+    resultadoDesencriptado = resultadoDesencriptado.replaceAll('imes', 'i');
+    resultadoDesencriptado = resultadoDesencriptado.replaceAll('ober', 'o');
+    resultadoDesencriptado = resultadoDesencriptado.replaceAll('ufat', 'u'); 
+    asignarTextoElemento('espacioResultado', resultadoDesencriptado);
 }
 
 

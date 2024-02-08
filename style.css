@@ -4,7 +4,15 @@ body{
     height: 100%;
 }
 
+.container{
+    background-color: blue;
+    display: flex;
+}
 
+.entrada, .resultado{
+    flex: 1;
+    height: 100vh;
+}
 
 .entrada{
     background-color: blueviolet;
@@ -42,7 +50,7 @@ body{
 
 }
 
-.botones button{
+.botones button, .resultado button{
     background: #1AAB8A;
     color: white;
     border-color: #1AAB8A;
@@ -55,7 +63,7 @@ body{
 
 }
 
-.botones button:hover{
+.botones button:hover, .resultado button:hover{
     background: white;
     color: #1AAB8A;
     font-weight: bold;
@@ -69,16 +77,18 @@ body{
 .resultado{
     background-color: yellow;
     width: 40%;
+    height: 75vh;
     display: inline-block;
     text-align: center;
     vertical-align: top;
+    border-radius: 30px;
     margin: 30px;
+    padding: 20px;
 }
 
 .rectangulo{
     background-color: blanchedalmond;
-    height: 80vh;
-    border-radius: 30px;
+    height: 85%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -89,8 +99,14 @@ body{
 
 .rectangulo img{
     width: 60%;
+}
+
+.resultado button{
+    display: inline;
     margin: 20px;
 }
+
+
 
 footer{
     background-color: aqua;
@@ -101,7 +117,19 @@ footer{
 
 }
 
-@media screen and (max-width:1090px) {
+@media screen and (max-width:817px) {
+
+    .entrada, .resultado{
+        width: 100%;
+    }
+
+    footer{
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width:1375px) {
 
 
     .entrada, .resultado{
@@ -114,7 +142,7 @@ footer{
 
 }
 
-@media screen and (max-width:760px) {
+/*@media screen and (max-width:760px) {
 
 
     .entrada, .resultado, footer{
@@ -127,4 +155,4 @@ footer{
     }
 
 
-}
+}*/
