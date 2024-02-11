@@ -5,6 +5,7 @@ body{
 }
 
 .container{
+    width: auto;
     background-color: blue;
     display: flex;
 }
@@ -42,6 +43,7 @@ body{
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 1.5em;
 }
+
 
 .botones{
     background-color: red;
@@ -111,7 +113,7 @@ body{
 }
 
 .resultado button{
-    display: inline;
+    display: none;
     margin: 20px;
 }
 
@@ -128,42 +130,3 @@ footer{
 
 }
 
-@media screen and (max-width:817px) {
-
-    .entrada, .resultado{
-        width: 100%;
-    }
-
-    footer{
-        width: 100%;
-    }
-
-}
-
-@media screen and (max-width:1375px) {
-
-
-    .entrada, .resultado{
-        width: 40%;
-    }
-
-    footer{
-        width: auto;
-    }
-
-}
-
-/*@media screen and (max-width:760px) {
-
-
-    .entrada, .resultado, footer{
-        width: auto;
-    }
-
-
-    .rectangulo img{
-        display: none;
-    }
-
-
-}*/

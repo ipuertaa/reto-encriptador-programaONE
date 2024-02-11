@@ -26,12 +26,13 @@
                 <img class="logo" src="imagenes/logo-alura.png" alt="Logo Alura">
     
                 <section class="entrada-texto">
-                    <textarea placeholder="Ingrese texto aquí" id="textoUsuario"></textarea>
+                    <textarea placeholder="Ingrese texto aquí (solo minúsculas)" id="textoUsuario" required></textarea>
+
                 </section>
-    
+
                 <section class="botones">
-                    <button onclick="encriptarTexto();">Encriptar</button>
-                    <button onclick="desencriptarTexto();">Desencriptar</button>
+                    <button onclick="verificarTexto(1);">Encriptar</button>
+                    <button onclick="verificarTexto(2);">Desencriptar</button>
                 </section>
     
             </div>
@@ -42,7 +43,7 @@
                     <p id="texto_inicial">Ningún mensaje fue encontrado</p>
                     <p id="espacioResultado">Lugar donde se va a mostrar el texto después de hacerle el proceso</p>
                 </section>
-                <button id="copiar">Copiar</button>
+                <button id="copiar" onclick="copiarContenido();">Copiar</button>
                 
             </div>
 

@@ -10,15 +10,35 @@ La letra "a" es convertida para "ai"
 La letra "o" es convertida para "ober"
 La letra "u" es convertida para "ufat"  */ 
 
+//Función para verificar el texto ingresado
+function verificarTexto(modo){
+    const caracteres_validos = /^[a-z ]+$/;
+    let texto = document.getElementById("textoUsuario").value;
+    if(caracteres_validos.test(texto)){
+
+        if (modo == 1){
+            alert('Modo encriptación')
+            encriptarTexto(texto);
+        }
+        else{
+            alert('Modo desencriptación')
+            desencriptarTexto(texto)
+        }
+        
+    } 
+    else{
+        alert('Error: ingrese únicamente letras minúsculas');
+    }
+}
+
 
 //Función para encriptar texto
-function encriptarTexto(){
+function encriptarTexto(mensajeNoEncriptado){
     
-    let mensajeNoEncriptado = document.getElementById("textoUsuario").value;
     let resultadoEncriptado = '';
 
-
-    for (var i = 0; i < mensajeNoEncriptado.length; i++){
+    
+   for (var i = 0; i < mensajeNoEncriptado.length; i++){
         switch (mensajeNoEncriptado[i]){
             case 'a':
                 resultadoEncriptado += 'ai';
@@ -45,12 +65,9 @@ function encriptarTexto(){
                 break;
         }
     }
-    document.getElementById("imagen").style.display = "none";
+
     asignarTextoElemento('espacioResultado', resultadoEncriptado);
-    document.getElementById("textoUsuario").value = "";
-    document.getElementById("copiar").style.display = "inline";
-    document.getElementById("texto_inicial").style.display = "none";
-    document.getElementById("espacioResultado").style.fontSize = "1.5em";
+    estilo();
 }
 
 
@@ -62,8 +79,8 @@ function asignarTextoElemento(elemento, texto){
 }
 
 //Función para desencriptar texto
-function desencriptarTexto(){
-    let mensajeEncriptado = document.getElementById("textoUsuario").value;
+function desencriptarTexto(mensajeEncriptado){
+
     let resultadoDesencriptado = '';
     resultadoDesencriptado = mensajeEncriptado.replaceAll('ai', 'a');
     resultadoDesencriptado = resultadoDesencriptado.replaceAll('enter', 'e');
@@ -71,16 +88,31 @@ function desencriptarTexto(){
     resultadoDesencriptado = resultadoDesencriptado.replaceAll('ober', 'o');
     resultadoDesencriptado = resultadoDesencriptado.replaceAll('ufat', 'u'); 
     asignarTextoElemento('espacioResultado', resultadoDesencriptado);
+    estilo();
+
 }
 
+//Función para copiar contenido
+function copiarContenido(){
 
+    let texto = document.getElementById("espacioResultado").innerHTML;
 
+    navigator.clipboard.writeText(texto)
+    .then(() => {
+      console.log('Texto copiado al portapapeles')
+    })
+    .catch(err => {
+      console.error('Error al copiar al portapapeles:', err)
+    })
+  
+}
 
+//Función para organizar el estilo después de oprimir el boton encriptar o desencriptar
+function estilo(){
+    document.getElementById("imagen").style.display = "none";
+    document.getElementById("textoUsuario").value = "";
+    document.getElementById("copiar").style.display = "inline";
+    document.getElementById("texto_inicial").style.display = "none";
+    document.getElementById("espacioResultado").style.fontSize = "1.5em";
 
-
-
-
-
-
-
-
+}
