@@ -101,10 +101,21 @@ body{
     width: 60%;
 }
 
+#texto_inicial{
+    font-size: 1.5em;
+    margin: 10px;
+}
+
+#espacioResultado{
+    font-size: 1em;
+}
+
 .resultado button{
     display: inline;
     margin: 20px;
 }
+
+
 
 
 

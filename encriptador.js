@@ -49,6 +49,8 @@ function encriptarTexto(){
     asignarTextoElemento('espacioResultado', resultadoEncriptado);
     document.getElementById("textoUsuario").value = "";
     document.getElementById("copiar").style.display = "inline";
+    document.getElementById("texto_inicial").style.display = "none";
+    document.getElementById("espacioResultado").style.fontSize = "1.5em";
 }
 
 
