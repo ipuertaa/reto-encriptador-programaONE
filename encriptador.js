@@ -17,11 +17,9 @@ function verificarTexto(modo){
     if(caracteres_validos.test(texto)){
 
         if (modo == 1){
-            alert('Modo encriptación')
             encriptarTexto(texto);
         }
         else{
-            alert('Modo desencriptación')
             desencriptarTexto(texto)
         }
         
@@ -104,7 +102,12 @@ function copiarContenido(){
     .catch(err => {
       console.error('Error al copiar al portapapeles:', err)
     })
-  
+
+
+    asignarTextoElemento('espacioResultado', "")
+    document.getElementById("imagen").style.display = "inline";
+    document.getElementById("texto_inicial").style.display = "inline";
+    document.getElementById("texto_inicial").style.fontWeight = "normal";
 }
 
 //Función para organizar el estilo después de oprimir el boton encriptar o desencriptar
